@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+}
+
+#block-form {
+    background: green;
+    width: 30%;
+    height: 100%;
+}
+
+#block-parking {
+    width: 70%;
+    height: 100%;
+    background: gray;
+}
+
+#block-form h2 {
+    color: aliceblue;
+    font-family: sans-serif;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #fff;
+    margin-bottom: 10px;
+}
+
+.form-control {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.form-control input,
+.form-control select,
+.form-control button {
+    width: 70%;
+    height: 50px;
+    padding: 10px;
+    padding-left: 25px;
+    font-size: 25px;
+}
+
+.form-control button {
+    height: 60px;
+    border: none;
+    border-radius: 5px;
+    background: #6743ef;
+    color: #fff;
+    font-weight: bolg;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.form-control button:hover {
+    background: #8a6df3;
+}
+
+.buttons-lvl {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons-lvl button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    background: #2194f7;
+    color: #fff;
+}
+
+.buttons-lvl button:hover {
+    background: #58acf6;
+}
+
+.buttons-lvl button.active {
+    background: #b621f7;
+}
+
+#block-parking {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#block-parking img {
+    width: 90%;
+    height: 90%;
+    border: 4px solid #505050;
+    border-radius: 10px;
+}
+
+#cars {
+    width: 90%;
+    height: 90%;
+    background: rgba(0, 128, 0, 0.199);
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    border-radius: 10px;
+}
+
+.car {
+    width: 70px;
+    height: 150px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.car .top {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    border-bottom: 2px solid #000;
+}
+
+.atrr {
+    border-radius: 20%;
+    background-color: gray;
+    position: absolute;
+    width: 15px;
+    height: 20px;
+    top: calc(50% - 10px);
+    left: calc(50% - 7.5px);
+}
+
+.car .top::after,
+.car .top::before {
+    content: "";
+    width: 15px;
+    height: 3px;
+    background-color: yellow;
+    position: absolute;
+}
+
+.car .top::before {
+    top: 0;
+    left: 0;
+    border-radius: 0px 0px 5px 0px;
+}
+
+.car .top::after {
+    top: 0;
+    right: 0;
+    border-radius: 0px 0px 0px 5px;
+}
+
+.car .middle {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    border-bottom: 2px solid black;
+}
+
+.car .bottom {
+    position: relative;
+    width: 100%;
+    height: 40px;
+
+}
+
+.car .bottom::after,
+.car .bottom::before {
+    content: "";
+    width: 15px;
+    height: 3px;
+    background-color: rgb(243, 130, 24);
+    position: absolute;
+}
+
+.car .bottom::before {
+    bottom: 0;
+    left: 5px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.car .bottom::after {
+    bottom: 0;
+    right: 5px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.color-red {
+    background: red;
+}
+
+.color-blue {
+    background: blue;
+}
+
+.color-green {
+    background: green;
+}
+
+.color-yellow {
+    background: yellow;
+}
+
+.color-orange {
+    background: orange;
+}
+
+.color-gray {
+    background: gray;
+}
+
+/*Лімузиин*/
+.car.type-1 {
+    height: 170px;
+}
+
+.car.type-1 .middle {
+    height: 110px;
+}
+
+.car.type-1 .bottom {
+    height: 20px;
+}
+
+/*пікап*/
+.car.type-2 {
+    height: 170px;
+}
+
+.car.type-2 .middle {
+    height: 30px;
+}
+
+.car.type-2 .bottom {
+    height: 100px;
+    background: #6b6a6a;
+    border: 6px solid black;
+}
+
+.car.type-2 .bottom::after {
+    bottom: -6px;
+}
+
+.car.type-2 .bottom::before {
+    bottom: -6px;
+}
+
+/*універсал*/
+/* .car.type-3 {} */
+
+.car.type-3 .middle {
+    height: 100px;
+}
+
+.car.type-3 .bottom {
+    height: 10px;
+}
+
+
+.rotate-90 {
+    transform: rotate(90deg);
+}
