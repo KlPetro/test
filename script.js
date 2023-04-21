@@ -15,7 +15,7 @@
                 <div class="top"></div>
                 <div class="middle"></div>
                 <div class="bottom"></div>
-            </div
+            </div>
     - додати авто на сторінку, в потрібні координати
 
 
@@ -31,7 +31,10 @@ let numbers = document.querySelector("input[name=numbers]");
 let color = document.querySelector("select[name=color]");
 let type = document.querySelector("select[name=type]");
 let place = document.querySelector("select[name=place]");
+
 let btnAdd = document.querySelector("#btn-add");
+
+let carsBlock = document.querySelector("#cars");
 
 btnAdd.onclick = function () {
   let info =
@@ -43,5 +46,27 @@ btnAdd.onclick = function () {
     ", місце: " +
     place.value +
     ".";
-  console.dir(info);
+  createCar(numbers.value, color.value, type.value, place.value);
 };
+
+function createCar(numbers, color, type, place) {
+  /* <div class="car color-red type-1 rotate-90" style="top:20px; left:80px">
+                <div class="top"></div>
+                <div class="middle"></div>
+                <div class="bottom"></div>
+            </div>
+    */
+
+  let html =
+    '<div class="car color-' +
+    color +
+    " type-" +
+    type +
+    ' rotate-90" style="top:20px; left:80px">' +
+    '<div class="top"></div>' +
+    ' <div class="middle"></div>' +
+    '<div class="bottom"></div>' +
+    "</div>";
+
+  carsBlock.innerHTML = carsBlock.innerHTML + html;
+}
