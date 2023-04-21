@@ -146,8 +146,8 @@ body {
 .car .top::before {
     content: "";
     width: 15px;
-    height: 3px;
-    background-color: rgb(245, 245, 242);
+    height: 5px;
+    background-color: rgb(240, 240, 155);
     position: absolute;
 }
 

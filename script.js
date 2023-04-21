@@ -38,16 +38,31 @@ let carsBlock = document.querySelector("#cars");
 
 // позиції на парковці
 // let count = 1;
-let pos1 = { top: "-10px", left: "120px", direction: "horyzontally" };
-let pos2 = { top: "95px", left: "120px", direction: "horyzontally" };
-let pos3 = { top: "200px", left: "120px", direction: "horyzontally" };
-let pos4 = { top: "300px", left: "120px", direction: "horyzontally" };
-let pos5 = { top: "405px", left: "120px", direction: "horyzontally" };
-let pos6 = { top: "-10px", left: "350px", direction: "horyzontally" };
-let pos7 = { top: "95px", left: "350px", direction: "horyzontally" };
-let pos8 = { top: "200px", left: "350px", direction: "horyzontally" };
-let pos9 = { top: "300px", left: "350px", direction: "horyzontally" };
-let pos10 = { top: "405px", left: "350px", direction: "horyzontally" };
+// let pos1 = { top: "-10px", left: "120px", direction: "horyzontally" };
+// let pos2 = { top: "95px", left: "120px", direction: "horyzontally" };
+// let pos3 = { top: "200px", left: "120px", direction: "horyzontally" };
+// let pos4 = { top: "300px", left: "120px", direction: "horyzontally" };
+// let pos5 = { top: "405px", left: "120px", direction: "horyzontally" };
+// let pos6 = { top: "-10px", left: "350px", direction: "horyzontally" };
+// let pos7 = { top: "95px", left: "350px", direction: "horyzontally" };
+// let pos8 = { top: "200px", left: "350px", direction: "horyzontally" };
+// let pos9 = { top: "300px", left: "350px", direction: "horyzontally" };
+// let pos10 = { top: "405px", left: "350px", direction: "horyzontally" };
+
+// створення масиву
+let pos = [
+  { top: "-10px", left: "120px", direction: "horyzontally" },
+  { top: "95px", left: "120px", direction: "horyzontally" },
+  { top: "200px", left: "120px", direction: "horyzontally" },
+  { top: "300px", left: "120px", direction: "horyzontally" },
+  { top: "405px", left: "120px", direction: "horyzontally" },
+  { top: "-10px", left: "350px", direction: "horyzontally" },
+  { top: "95px", left: "350px", direction: "horyzontally" },
+  { top: "200px", left: "350px", direction: "horyzontally" },
+  { top: "300px", left: "350px", direction: "horyzontally" },
+  { top: "405px", left: "350px", direction: "horyzontally" },
+];
+console.dir(pos);
 
 // при натисканні на кнопку
 btnAdd.onclick = function () {
@@ -63,16 +78,16 @@ btnAdd.onclick = function () {
     ".";
 
   // створюєм машинку
-  createCar(numbers.value, color.value, type.value, pos1);
-  createCar(numbers.value, color.value, type.value, pos2);
-  createCar(numbers.value, color.value, type.value, pos3);
-  createCar(numbers.value, color.value, type.value, pos4);
-  createCar(numbers.value, color.value, type.value, pos5);
-  createCar(numbers.value, color.value, type.value, pos6);
-  createCar(numbers.value, color.value, type.value, pos7);
-  createCar(numbers.value, color.value, type.value, pos8);
-  createCar(numbers.value, color.value, type.value, pos9);
-  createCar(numbers.value, color.value, type.value, pos10);
+  createCar(numbers.value, color.value, type.value, pos[place.value]);
+  //   createCar(numbers.value, color.value, type.value, pos2);
+  //   createCar(numbers.value, color.value, type.value, pos3);
+  //   createCar(numbers.value, color.value, type.value, pos4);
+  //   createCar(numbers.value, color.value, type.value, pos5);
+  //   createCar(numbers.value, color.value, type.value, pos6);
+  //   createCar(numbers.value, color.value, type.value, pos7);
+  //   createCar(numbers.value, color.value, type.value, pos8);
+  //   createCar(numbers.value, color.value, type.value, pos9);
+  //   createCar(numbers.value, color.value, type.value, pos10);
 };
 
 // Функція створення машинки
