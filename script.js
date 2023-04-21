@@ -31,12 +31,27 @@ let numbers = document.querySelector("input[name=numbers]");
 let color = document.querySelector("select[name=color]");
 let type = document.querySelector("select[name=type]");
 let place = document.querySelector("select[name=place]");
-
+// обрати кнопку
 let btnAdd = document.querySelector("#btn-add");
-
+// обрати блок машин
 let carsBlock = document.querySelector("#cars");
 
+// позиції на парковці
+// let count = 1;
+let pos1 = { top: "-10px", left: "120px", direction: "horyzontally" };
+let pos2 = { top: "95px", left: "120px", direction: "horyzontally" };
+let pos3 = { top: "200px", left: "120px", direction: "horyzontally" };
+let pos4 = { top: "300px", left: "120px", direction: "horyzontally" };
+let pos5 = { top: "405px", left: "120px", direction: "horyzontally" };
+let pos6 = { top: "-10px", left: "350px", direction: "horyzontally" };
+let pos7 = { top: "95px", left: "350px", direction: "horyzontally" };
+let pos8 = { top: "200px", left: "350px", direction: "horyzontally" };
+let pos9 = { top: "300px", left: "350px", direction: "horyzontally" };
+let pos10 = { top: "405px", left: "350px", direction: "horyzontally" };
+
+// при натисканні на кнопку
 btnAdd.onclick = function () {
+  // дані про машинку
   let info =
     numbers.value +
     ", колір: " +
@@ -46,9 +61,21 @@ btnAdd.onclick = function () {
     ", місце: " +
     place.value +
     ".";
-  createCar(numbers.value, color.value, type.value, place.value);
+
+  // створюєм машинку
+  createCar(numbers.value, color.value, type.value, pos1);
+  createCar(numbers.value, color.value, type.value, pos2);
+  createCar(numbers.value, color.value, type.value, pos3);
+  createCar(numbers.value, color.value, type.value, pos4);
+  createCar(numbers.value, color.value, type.value, pos5);
+  createCar(numbers.value, color.value, type.value, pos6);
+  createCar(numbers.value, color.value, type.value, pos7);
+  createCar(numbers.value, color.value, type.value, pos8);
+  createCar(numbers.value, color.value, type.value, pos9);
+  createCar(numbers.value, color.value, type.value, pos10);
 };
 
+// Функція створення машинки
 function createCar(numbers, color, type, place) {
   /* <div class="car color-red type-1 rotate-90" style="top:20px; left:80px">
                 <div class="top"></div>
@@ -56,13 +83,18 @@ function createCar(numbers, color, type, place) {
                 <div class="bottom"></div>
             </div>
     */
-
   let html =
     '<div class="car color-' +
     color +
     " type-" +
     type +
-    ' rotate-90" style="top:20px; left:80px">' +
+    " " +
+    place.direction +
+    ' " style="top:' +
+    place.top +
+    "; left:" +
+    place.left +
+    '">' +
     '<div class="top"></div>' +
     ' <div class="middle"></div>' +
     '<div class="bottom"></div>' +

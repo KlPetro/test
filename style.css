@@ -147,7 +147,7 @@ body {
     content: "";
     width: 15px;
     height: 3px;
-    background-color: yellow;
+    background-color: rgb(245, 245, 242);
     position: absolute;
 }
 
@@ -280,6 +280,6 @@ body {
 }
 
 
-.rotate-90 {
+.horyzontally {
     transform: rotate(90deg);
 }
