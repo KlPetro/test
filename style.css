@@ -117,7 +117,6 @@ body {
 
 .car {
     width: 70px;
-    height: 150px;
     position: absolute;
     top: 20px;
     left: 20px;
@@ -164,15 +163,12 @@ body {
 .car .middle {
     position: relative;
     width: 100%;
-    height: 70px;
     border-bottom: 2px solid black;
 }
 
 .car .bottom {
     position: relative;
     width: 100%;
-    height: 40px;
-
 }
 
 .car .bottom::after,
@@ -220,50 +216,63 @@ body {
     background: gray;
 }
 
-/*Лімузиин*/
+/*седан*/
 .car.type-1 {
-    height: 170px;
+    height: 150px;
 }
 
 .car.type-1 .middle {
-    height: 110px;
+    height: 70px;
 }
 
 .car.type-1 .bottom {
-    height: 20px;
+    height: 40px;
 }
 
-/*пікап*/
+/*Лімузиин*/
 .car.type-2 {
     height: 170px;
 }
 
 .car.type-2 .middle {
-    height: 30px;
+    height: 110px;
 }
 
 .car.type-2 .bottom {
+    height: 20px;
+}
+
+/*пікап*/
+.car.type-3 {
+    height: 170px;
+}
+
+.car.type-3 .middle {
+    height: 30px;
+}
+
+.car.type-3 .bottom {
     height: 100px;
     background: #6b6a6a;
     border: 6px solid black;
 }
 
-.car.type-2 .bottom::after {
+.car.type-3 .bottom::after {
     bottom: -6px;
 }
 
-.car.type-2 .bottom::before {
+.car.type-3 .bottom::before {
     bottom: -6px;
 }
 
 /*універсал*/
 /* .car.type-3 {} */
 
-.car.type-3 .middle {
+.car.type-4 .middle {
     height: 100px;
 }
 
-.car.type-3 .bottom {
+.car.type-4 .bottom {
     height: 10px;
 }
 

@@ -12,9 +12,7 @@
         - перевірка чи число > 0
     - створити авто
           <div class="car color-red type-1 rotate-90" style="top:20px; left:80px">
-                <div class="top">
-                    <div class="attr"></div>
-                </div>
+                <div class="top"></div>
                 <div class="middle"></div>
                 <div class="bottom"></div>
             </div
