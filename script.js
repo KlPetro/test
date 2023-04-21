@@ -25,3 +25,9 @@
 
 4. Зробити видалення авто
 */
+
+/* обрати поля форми*/
+let numbers = document.querySelector("input[name=numbers]");
+let color = document.querySelector("select[name=color]");
+let type = document.querySelector("select[name=type]");
+let place = document.querySelector("select[name=place]");
