@@ -36,6 +36,29 @@ let btnAdd = document.querySelector("#btn-add");
 // обрати блок машин
 let carsBlock = document.querySelector("#cars");
 
+// обираю кнопки рівнів
+let btnLvl1 = document.querySelector("#btn-lvl1");
+let btnLvl2 = document.querySelector("#btn-lvl2");
+let btnLvl3 = document.querySelector("#btn-lvl3");
+
+// функції онклік для кнопків рівнів
+
+btnLvl1.onclick = function () {
+  btnLvl1.classList.add("active");
+  btnLvl2.classList.remove("active");
+  btnLvl3.classList.remove("active");
+};
+btnLvl2.onclick = function () {
+  btnLvl1.classList.remove("active");
+  btnLvl2.classList.add("active");
+  btnLvl3.classList.remove("active");
+};
+btnLvl3.onclick = function () {
+  btnLvl1.classList.remove("active");
+  btnLvl2.classList.remove("active");
+  btnLvl3.classList.add("active");
+};
+
 // позиції на парковці
 // let count = 1;
 // let pos1 = { top: "-10px", left: "120px", direction: "horyzontally" };
@@ -98,6 +121,7 @@ function createCar(numbers, color, type, place) {
                 <div class="bottom"></div>
             </div>
     */
+
   let html =
     '<div class="car color-' +
     color +
@@ -111,9 +135,32 @@ function createCar(numbers, color, type, place) {
     place.left +
     '">' +
     '<div class="top"></div>' +
-    ' <div class="middle"></div>' +
+    ' <div class="middle">' +
+    "<span>" +
+    // додавання номера на кришу авто
+    numbers +
+    "</span>" +
+    "</div>" +
     '<div class="bottom"></div>' +
     "</div>";
-
+  // додавання блоку (машинки)
   carsBlock.innerHTML = carsBlock.innerHTML + html;
 }
+
+//  по кліку видаляється машинка
+carsBlock.onclick = function (event) {
+  //   вибір елемента
+  let element = event.target;
+  // вибір батька елемента
+  let parentElement = element.parentElement;
+  // перевірка за допомогою "contains" чи є у батька потрібний клас
+  if (parentElement.classList.contains("car")) {
+    // Перевірка на видалення авто
+    let approve = confirm("Хочеш видалити авто?");
+    // якщо є підтвердження то машинка видаляється
+    if (approve) {
+      // якщо є  то він видаляється
+      parentElement.remove();
+    }
+  }
+};

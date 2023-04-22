@@ -167,6 +167,14 @@ body {
     position: relative;
     width: 100%;
     border-bottom: 2px solid black;
+    text-align: center;
+    padding-top: 8px;
+}
+
+.car .middle span {
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: bold;
 }
 
 .car .bottom {
