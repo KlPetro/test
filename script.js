@@ -34,30 +34,124 @@ let place = document.querySelector("select[name=place]");
 // обрати кнопку
 let btnAdd = document.querySelector("#btn-add");
 // обрати блок машин
-let carsBlock = document.querySelector("#cars");
+let carsBlock;
 
 // обираю кнопки рівнів
 let btnLvl1 = document.querySelector("#btn-lvl1");
 let btnLvl2 = document.querySelector("#btn-lvl2");
 let btnLvl3 = document.querySelector("#btn-lvl3");
 
+let titlleLvl = document.querySelector("#block-parking h2");
+console.dir(place.innerHTML);
+
+// створення масивів координат
+let pos = [];
+
+let posLvl1 = [
+  { top: "-10px", left: "120px", direction: "horyzontally" },
+  { top: "95px", left: "120px", direction: "horyzontally" },
+  { top: "200px", left: "120px", direction: "horyzontally" },
+  { top: "300px", left: "120px", direction: "horyzontally" },
+  { top: "405px", left: "120px", direction: "horyzontally" },
+  { top: "-10px", left: "350px", direction: "horyzontally" },
+  { top: "95px", left: "350px", direction: "horyzontally" },
+  { top: "200px", left: "350px", direction: "horyzontally" },
+  { top: "300px", left: "350px", direction: "horyzontally" },
+  { top: "405px", left: "350px", direction: "horyzontally" },
+];
+
+let posLvl2 = [
+  { top: "55px", left: "80px", direction: "anglewise" },
+  { top: "180px", left: "80px", direction: "anglewise" },
+  { top: "300px", left: "80px", direction: "anglewise" },
+  { top: "425px", left: "80px", direction: "anglewise" },
+  { top: "545px", left: "80px", direction: "anglewise" },
+  { top: "-10px", left: "460px", direction: "horyzontally" },
+  { top: "100px", left: "460px", direction: "horyzontally" },
+  { top: "210px", left: "460px", direction: "horyzontally" },
+  { top: "325px", left: "460px", direction: "horyzontally" },
+  { top: "435px", left: "460px", direction: "horyzontally" },
+  { top: "550px", left: "460px", direction: "horyzontally" },
+  { top: "660px", left: "460px", direction: "horyzontally" },
+];
+
+let posLvl3 = [
+  { top: "25px", left: "55px" },
+  { top: "25px", left: "155px" },
+  { top: "25px", left: "260px" },
+  { top: "25px", left: "365px" },
+  { top: "25px", left: "465px" },
+  { top: "25px", left: "575px" },
+  { top: "25px", left: "676px" },
+  { top: "225px", left: "55px" },
+  { top: "225px", left: "155px" },
+  { top: "225px", left: "260px" },
+  { top: "225px", left: "365px" },
+  { top: "225px", left: "465px" },
+  { top: "225px", left: "575px" },
+  { top: "225px", left: "676px" },
+  { top: "425px", left: "55px" },
+  { top: "425px", left: "155px" },
+  { top: "425px", left: "260px" },
+  { top: "425px", left: "365px" },
+  { top: "425px", left: "465px" },
+  { top: "425px", left: "575px" },
+  { top: "425px", left: "676px" },
+  { top: "625px", left: "55px" },
+  { top: "625px", left: "155px" },
+  { top: "625px", left: "260px" },
+  { top: "625px", left: "365px" },
+  { top: "625px", left: "465px" },
+  { top: "625px", left: "575px" },
+  { top: "625px", left: "676px" },
+];
 // функції онклік для кнопків рівнів
 
 btnLvl1.onclick = function () {
   btnLvl1.classList.add("active");
   btnLvl2.classList.remove("active");
   btnLvl3.classList.remove("active");
+  carsBlock = document.querySelector("#cars-1");
+  document.querySelector("#cars-2").style.display = "none";
+  document.querySelector("#cars-3").style.display = "none";
+  titlleLvl.style.display = "none";
+  carsBlock.style.display = "block";
+  pos = posLvl1;
+  placeOfParking();
 };
 btnLvl2.onclick = function () {
   btnLvl1.classList.remove("active");
   btnLvl2.classList.add("active");
   btnLvl3.classList.remove("active");
+  carsBlock = document.querySelector("#cars-2");
+  document.querySelector("#cars-3").style.display = "none";
+  document.querySelector("#cars-1").style.display = "none";
+  titlleLvl.style.display = "none";
+  carsBlock.style.display = "block";
+  pos = posLvl2;
+  placeOfParking();
 };
 btnLvl3.onclick = function () {
   btnLvl1.classList.remove("active");
   btnLvl2.classList.remove("active");
   btnLvl3.classList.add("active");
+  carsBlock = document.querySelector("#cars-3");
+  document.querySelector("#cars-2").style.display = "none";
+  document.querySelector("#cars-1").style.display = "none";
+  titlleLvl.style.display = "none";
+  carsBlock.style.display = "block";
+  pos = posLvl3;
+  placeOfParking();
 };
+
+//Функція робить кількість мість на паркінгу
+function placeOfParking() {
+  place.innerHTML = "";
+  for (let i = 0; i < pos.length; i++) {
+    let html = '<option value="' + i + '">Місце ' + (i + 1) + "</option>";
+    place.innerHTML = place.innerHTML + html;
+  }
+}
 
 // позиції на парковці
 // let count = 1;
@@ -71,21 +165,6 @@ btnLvl3.onclick = function () {
 // let pos8 = { top: "200px", left: "350px", direction: "horyzontally" };
 // let pos9 = { top: "300px", left: "350px", direction: "horyzontally" };
 // let pos10 = { top: "405px", left: "350px", direction: "horyzontally" };
-
-// створення масиву
-let pos = [
-  { top: "-10px", left: "120px", direction: "horyzontally" },
-  { top: "95px", left: "120px", direction: "horyzontally" },
-  { top: "200px", left: "120px", direction: "horyzontally" },
-  { top: "300px", left: "120px", direction: "horyzontally" },
-  { top: "405px", left: "120px", direction: "horyzontally" },
-  { top: "-10px", left: "350px", direction: "horyzontally" },
-  { top: "95px", left: "350px", direction: "horyzontally" },
-  { top: "200px", left: "350px", direction: "horyzontally" },
-  { top: "300px", left: "350px", direction: "horyzontally" },
-  { top: "405px", left: "350px", direction: "horyzontally" },
-];
-console.dir(pos);
 
 // при натисканні на кнопку
 btnAdd.onclick = function () {

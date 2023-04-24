@@ -98,7 +98,15 @@ body {
     position: relative;
 }
 
+#block-parking h2 {
+    padding-top: 100px;
+    text-align: center;
+    color: aqua;
+    font-size: 90px;
+}
+
 #block-parking img {
+    display: none;
     width: 600px;
     height: 600px;
     border: 4px solid #505050;
@@ -108,14 +116,42 @@ body {
     left: 5%;
 }
 
-#cars {
-    width: 600px;
-    height: 600px;
+#cars-1,
+#cars-2,
+#cars-3 {
     background: rgba(0, 128, 0, 0.199);
     position: absolute;
     top: 5%;
     left: 5%;
     border-radius: 10px;
+    display: none;
+}
+
+#cars-1 {
+    background-image: url(./img/parking/p_lv_1.jpg);
+    background-position: center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    width: 600px;
+    height: 600px;
+}
+
+#cars-2 {
+    background-image: url(./img/parking/p_lv_2.jpg);
+    background-position: center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    width: 600px;
+    height: 800px;
+}
+
+#cars-3 {
+    background-image: url(./img/parking/p_lv_3.jpg);
+    background-position: center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    width: 800px;
+    height: 800px;
 }
 
 .car {
@@ -172,7 +208,7 @@ body {
 }
 
 .car .middle span {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-size: 15px;
     font-weight: bold;
 }
@@ -290,4 +326,8 @@ body {
 
 .horyzontally {
     transform: rotate(90deg);
+}
+
+.anglewise {
+    transform: rotate(115deg);
 }
