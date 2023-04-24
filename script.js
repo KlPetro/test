@@ -7,9 +7,7 @@
 
 2. Зробити створення авто та додавання на парковку
     - оброблення форми
-        - перевірка чи введено число
-        - перевірка чи пустий рядок
-        - перевірка чи число > 0
+    
     - створити авто
           <div class="car color-red type-1 rotate-90" style="top:20px; left:80px">
                 <div class="top"></div>
@@ -33,8 +31,6 @@ let type = document.querySelector("select[name=type]");
 let place = document.querySelector("select[name=place]");
 // обрати кнопку
 let btnAdd = document.querySelector("#btn-add");
-// обрати блок машин
-let carsBlock;
 
 // обираю кнопки рівнів
 let btnLvl1 = document.querySelector("#btn-lvl1");
@@ -42,7 +38,14 @@ let btnLvl2 = document.querySelector("#btn-lvl2");
 let btnLvl3 = document.querySelector("#btn-lvl3");
 
 let titlleLvl = document.querySelector("#block-parking h2");
-console.dir(place.innerHTML);
+// обрати блок машин
+let carsBlock = 1;
+let carsBlock1 = document.querySelector("#cars-1");
+let carsBlock2 = document.querySelector("#cars-2");
+let carsBlock3 = document.querySelector("#cars-3");
+
+//блок парковки
+let parkingBlock = document.querySelector("#block-parking");
 
 // створення масивів координат
 let pos = [];
@@ -111,33 +114,35 @@ btnLvl1.onclick = function () {
   btnLvl1.classList.add("active");
   btnLvl2.classList.remove("active");
   btnLvl3.classList.remove("active");
-  carsBlock = document.querySelector("#cars-1");
-  document.querySelector("#cars-2").style.display = "none";
-  document.querySelector("#cars-3").style.display = "none";
+  carsBlock = carsBlock1;
+  carsBlock2.style.display = "none";
+  carsBlock3.style.display = "none";
   titlleLvl.style.display = "none";
   carsBlock.style.display = "block";
   pos = posLvl1;
   placeOfParking();
 };
+
 btnLvl2.onclick = function () {
   btnLvl1.classList.remove("active");
   btnLvl2.classList.add("active");
   btnLvl3.classList.remove("active");
-  carsBlock = document.querySelector("#cars-2");
-  document.querySelector("#cars-3").style.display = "none";
-  document.querySelector("#cars-1").style.display = "none";
+  carsBlock = carsBlock2;
+  carsBlock3.style.display = "none";
+  carsBlock1.style.display = "none";
   titlleLvl.style.display = "none";
   carsBlock.style.display = "block";
   pos = posLvl2;
   placeOfParking();
 };
+
 btnLvl3.onclick = function () {
   btnLvl1.classList.remove("active");
   btnLvl2.classList.remove("active");
   btnLvl3.classList.add("active");
-  carsBlock = document.querySelector("#cars-3");
-  document.querySelector("#cars-2").style.display = "none";
-  document.querySelector("#cars-1").style.display = "none";
+  carsBlock = carsBlock3;
+  carsBlock2.style.display = "none";
+  carsBlock1.style.display = "none";
   titlleLvl.style.display = "none";
   carsBlock.style.display = "block";
   pos = posLvl3;
@@ -227,7 +232,9 @@ function createCar(numbers, color, type, place) {
 }
 
 //  по кліку видаляється машинка
-carsBlock.onclick = function (event) {
+parkingBlock.onclick = function (event) {
+  console.dir(event);
+
   //   вибір елемента
   let element = event.target;
   // вибір батька елемента
@@ -238,7 +245,7 @@ carsBlock.onclick = function (event) {
     let approve = confirm("Хочеш видалити авто?");
     // якщо є підтвердження то машинка видаляється
     if (approve) {
-      // якщо є  то він видаляється
+      // видаляється
       parentElement.remove();
     }
   }
